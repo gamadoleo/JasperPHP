@@ -24,7 +24,7 @@ See more blog, documentation, and more on https://jasperphp.com
         <td>Status</td>
     </tr>
     <tr>
-        <td colspan="4">Basic elements</td>
+        <td colspan="4">Basic elements</td> 
     </tr>
     <tr>
         <td>Text Field</td>
