@@ -8,7 +8,7 @@ use \JasperPHP;
  * classe TLabel
  * classe para construção do elemento Frame
  *
- * @author   Leandro Gama <gamadoleo@hotmail.com.br>
+ * @author   Leandro Gama <gamadoleo@hotmail.com>
  * @version  2021.06.13
  * @access   restrict
  * 
