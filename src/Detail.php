@@ -39,7 +39,7 @@ class Detail extends Element {
                     foreach ($obj->arrayGroup as $group) {
                         preg_match_all("/F{(\w+)}/", $group->groupExpression, $matchesF);
                         $groupExpression = $matchesF[1][0];
-                        if ($rowIndex == 1 || $group->resetVariables == 'true') {
+                        if (($rowIndex == 1 || $group->resetVariables == 'true') && ($group->groupHeader)) {
                             $groupHeader = new GroupHeader($group->groupHeader);
                             $groupHeader->generate(array($obj, $row));
                             $group->resetVariables = 'false';
@@ -87,7 +87,7 @@ class Detail extends Element {
                 }
                 $arrayVariable = ($obj->arrayVariable) ? $obj->arrayVariable : array();
                 $recordObject = array_key_exists('recordObj', $arrayVariable) ? $obj->arrayVariable['recordObj']['initialValue'] : "stdClass";
-
+                $obj->lastRowData = $obj->rowData;
                 $row = ( is_array($dbData) ) ? (array_key_exists($rowIndex, $dbData)) ? $dbData[$rowIndex] : null : $dbData->fetchObject($recordObject);
                 //echo $rowIndex;
                 if (count($obj->arrayGroup) > 0) {
